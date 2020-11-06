@@ -1,7 +1,6 @@
 struct ZL {
 	//1 base edge and vertex
-	static
-	const int N = 556, M = 2660, MM = M * 10, inf = 1e9;
+	static const int N = 556, M = 2660, MM = M * 10, inf = 1e9;
 	//MM = M * log N
 	struct bian {
 		int u, v, w, use, id;

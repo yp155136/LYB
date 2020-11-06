@@ -1,6 +1,5 @@
 struct BKB {
-	static
-	const int MAX_N = 50;
+	static const int MAX_N = 50;
 	typedef bitset < MAX_N > bst;
 	bst N[MAX_N];
 	int n;

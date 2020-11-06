@@ -1,8 +1,6 @@
 struct AC_Automata {
-	static
-	const int N = 2e4 + 6;
-	static
-	const int SIGMA = 26;
+	static const int N = 2e4 + 6;
+	static const int SIGMA = 26;
 	int ch[N][SIGMA], val[N], sz;
 	int last[N], fail[N];
 	int que[N], qs, qe, cnt[N];

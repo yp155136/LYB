@@ -1,8 +1,6 @@
 struct Bigint {
-	static
-	const int LEN = 60;
-	static
-	const int BIGMOD = 10000;
+	static const int LEN = 60;
+	static const int BIGMOD = 10000;
 	int s;
 	int vl, v[LEN];
 	//  vector<int> v;

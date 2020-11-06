@@ -1,8 +1,6 @@
 struct WeightGraph {
-	static
-	const int INF = INT_MAX;
-	static
-	const int N = 514;
+	static const int INF = INT_MAX;
+	static const int N = 514;
 	struct edge {
 		int u, v, w;
 		edge() {}
