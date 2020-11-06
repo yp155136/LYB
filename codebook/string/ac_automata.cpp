@@ -1,13 +1,15 @@
 struct AC_Automata {
-	static const int N = 2e4 + 6;
-	static const int SIGMA = 26;
+	static
+	const int N = 2e4 + 6;
+	static
+	const int SIGMA = 26;
 	int ch[N][SIGMA], val[N], sz;
 	int last[N], fail[N];
 	int que[N], qs, qe, cnt[N];
 	void init() {
 		sz = 1;
-		memset(ch[0],0,sizeof(ch[0]));
-		qs = qe  = 0;
+		memset(ch[0], 0, sizeof(ch[0]));
+		qs = qe = 0;
 		memset(cnt, 0, sizeof(cnt));
 		memset(val, 0, sizeof(val));
 		memset(last, 0, sizeof(last));
@@ -32,11 +34,12 @@ struct AC_Automata {
 	void print(int j) {
 		if (j) {
 			//now we match string v[j]
-			print(last[j]);  //may match multiple strings
+			print(last[j]); //may match multiple strings
 		}
 	}
 	void getFail() {
-		qs = 0, qe = 0; fail[0] = 0;
+		qs = 0, qe = 0;
+		fail[0] = 0;
 		for (int c = 0; c < SIGMA; c++) {
 			int now = ch[0][c];
 			if (now) {
@@ -54,12 +57,12 @@ struct AC_Automata {
 				int v = fail[t];
 				while (v && !ch[v][c]) v = fail[v];
 				fail[now] = ch[v][c];
-				last[now] = val[ fail[now] ]? fail[now] : last[ fail[now] ];
+				last[now] = val[fail[now]] ? fail[now] : last[fail[now]];
 			}
 		}
 	}
 	void AC_evolution() {
-		for (qs = 0; qs != qe; ) {
+		for (qs = 0; qs != qe;) {
 			int now = que[qs++];
 			for (int i = 0; i < SIGMA; i++) {
 				if (ch[now][i] == 0) ch[now][i] = ch[fail[now]][i];
@@ -82,14 +85,15 @@ struct AC_Automata {
 			cnt[fail[que[i]]] += cnt[que[i]];
 		}
 	}
-} ac;
+}
+ac;
 
 const int N = 156;
 string s[N];
 int ed[N];
 
 ac.init();
-ac.insert(s[i],i); // insert small strings
+ac.insert(s[i], i); // insert small strings
 ac.build();
 ac.Find(large_string);
-ac.cnt[ac.insert(s[i],i)]; // number of small string
+ac.cnt[ac.insert(s[i], i)]; // number of small string

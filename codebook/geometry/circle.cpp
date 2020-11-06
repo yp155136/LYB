@@ -1,7 +1,7 @@
 //Note that this code will crash if circle A and B are the same
 typedef pair<double, double> pdd;
-pdd rtcw(pdd p){return pdd(p.Y, -p.X); }
-vector<pdd> circlesintersect(pdd A, pdd B, double r1, double r2){
+pdd rtcw(pdd p) { return pdd(p.Y, -p.X); }
+vector<pdd> circlesintersect(pdd A, pdd B, double r1, double r2) {
 	vector<pdd> ret;
 	double d = dis(A, B);
 	if(d > r1 + r2 || d + min(r1, r2) < max(r1, r2))

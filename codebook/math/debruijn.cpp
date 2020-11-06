@@ -1,6 +1,6 @@
 // sz_lim, MAX, MAX_len
 int res[MAX], aux[MAX_len];
-void db(int t, int p, int len, int k, int &sz) {
+void db(int t, int p, int len, int k, int & sz) {
 	if (sz >= sz_lim) return;
 	if (t > len) {
 		if (len % p == 0) {

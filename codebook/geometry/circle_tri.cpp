@@ -11,7 +11,7 @@ struct Circle_and_Segment_Intersection {
 		ld bb4ac = b * b - 4 * a * c;
 		if (bb4ac < -eps) return ret; //no intersection
 		vector<ld> ts;
-		if ( (bb4ac) <= eps) {
+		if ((bb4ac) <= eps) {
 			ts.push_back(-b / 2 / a);
 		}
 		else {

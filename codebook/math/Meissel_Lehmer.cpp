@@ -7,21 +7,22 @@ int64_t PrimeCount(int64_t n) {
 	int s = (v + 1) / 2;
 	vector<int> roughs(s);
 	for (int i = 0; i < s; ++i) roughs[i] = 2 * i + 1;
-	vector<int64_t> larges(s);
+	vector<int64_t > larges(s);
 	for (int i = 0; i < s; ++i) larges[i] = (n / (2 * i + 1) + 1) / 2;
 	vector<bool> skip(v + 1);
 	int pc = 0;
 	for (int p = 3; p <= v; ++p) {
 		if (smalls[p] > smalls[p - 1]) {
-			int q = p * p; pc++;
-			if (1LL * q * q > n) break;
+			int q = p * p;
+			pc++;
+			if (1 LL * q * q > n) break;
 			skip[p] = true;
 			for (int i = q; i <= v; i += 2 * p) skip[i] = true;
 			int ns = 0;
 			for (int k = 0; k < s; ++k) {
 				int i = roughs[k];
 				if (skip[i]) continue;
-				int64_t d = 1LL * i * p;
+				int64_t d = 1 LL * i * p;
 				larges[ns] = larges[k] - (d <= v ? larges[smalls[d] - pc] : smalls[n / d]) + pc;
 				roughs[ns++] = i;
 			}
@@ -37,7 +38,7 @@ int64_t PrimeCount(int64_t n) {
 		int64_t s = larges[k] - (pc + k - 1);
 		for (int l = 1; l < k; ++l) {
 			int p = roughs[l];
-			if (1LL * p * p > m) break;
+			if (1 LL * p * p > m) break;
 			s -= smalls[m / p] - (pc + l - 1);
 		}
 		larges[0] -= s;

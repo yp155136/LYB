@@ -46,13 +46,13 @@ struct Cost_Flow {
 			if (dis[t] == INF) break;
 			int mn_flow = INF;
 			for (int i = t; i != s; i = par[i]) {
-				mn_flow = min(mn_flow, G[ par[i] ][ par_id[i] ].cap);
+				mn_flow = min(mn_flow, G[par[i]][par_id[i]].cap);
 			}
 			flow += mn_flow;
 			cost += mn_flow * dis[t];
 			for (int i = t; i != s; i = par[i]) {
-				G[ par[i] ][ par_id[i] ].cap -= mn_flow;
-				G[ i ][ G[ par[i] ][ par_id[i] ].rev ].cap += mn_flow;
+				G[par[i]][par_id[i]].cap -= mn_flow;
+				G[i][G[par[i]][par_id[i]].rev].cap += mn_flow;
 			}
 		}
 		return make_pair(flow, cost);

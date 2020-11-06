@@ -1,8 +1,8 @@
 /*
-Maximum density subgraph ( \sum W_e + \sum W_v ) / |V|
+Maximum density subgraph (\sum W_e + \sum W_v) / |V|
 Binary search on answer:
 For a fixed D, construct a Max flow model as follow:
-Let S be Sum of all weight( or inf)
+Let S be Sum of all weight(or inf)
 1. from source to each node with cap = S
 2. For each (u,v,w) in E, (u->v,cap=w), (v->u,cap=w)
 3. For each node v, from v to sink with cap = S + 2 * D - deg[v] - 2 * (W of v)
@@ -34,8 +34,8 @@ struct isap{
 		for(int i = 0; i < n + 2; ++ i)	adj[i].clear();
 	}
 	void add(int u, int v, ll c){
-		adj[u].eb(  v, adj[v].size(), c  );
-		adj[v].eb(  u, adj[u].size() - 1, 0  );
+		adj[u].eb(v, adj[v].size(), c);
+		adj[v].eb(u, adj[u].size() - 1, 0);
 	}
 	ll dfs(int now, ll f){
 		if(now == T)	return f;
@@ -43,7 +43,7 @@ struct isap{
 		for(edge &e : adj[now]){
 			if(e.c){
 				ll x;
-				if( dis[now] == dis[e.t] + 1 && (x = dfs(e.t, min(f, e.c))) ){
+				if(dis[now] == dis[e.t] + 1 && (x = dfs(e.t, min(f, e.c)))){
 					e.c -= x;
 					adj[e.t][e.r].c += x;
 					return x;
@@ -51,7 +51,7 @@ struct isap{
 				mi = min(mi, dis[e.t]);
 			}
 		}
-		if( --gap[dis[now]] == 0)	ok = 0;
+		if(--gap[dis[now]] == 0)	ok = 0;
 		dis[now] = mi + 1;
 		gap[ dis[now] ]++;
 		return 0;
@@ -81,7 +81,7 @@ struct isap{
 		for(int i = 0; i < n; ++ i) {
 			if (D[i] > 0) base += D[i];
 			if (D[i] > 0) add(SS, i, D[i]);
-			if (D[i] < 0) add(i ,TT, -D[i]);
+			if (D[i] < 0) add(i, TT, -D[i]);
 		}
 		add(T, S, INF);
 		int tmps = S, tmpt = T;
