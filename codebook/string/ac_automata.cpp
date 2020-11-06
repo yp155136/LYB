@@ -9,8 +9,8 @@ struct AC_Automata {
 		memset(ch[0],0,sizeof(ch[0]));
 		qs = qe  = 0;
 		memset(cnt, 0, sizeof(cnt));
-        memset(val, 0, sizeof(val));
-        memset(last, 0, sizeof(last));
+		memset(val, 0, sizeof(val));
+		memset(last, 0, sizeof(last));
 	}
 	int idx(char c) {
 		return c - 'a';
