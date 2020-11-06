@@ -183,9 +183,6 @@ INPUT /home/lawfung/LYB/codebook/data_structure/linkcut_tree.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/lichao.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/lichao.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/lichao.cpp
-INPUT /home/lawfung/LYB/codebook/data_structure/block_tree.cpp
-INPUT /home/lawfung/LYB/codebook/data_structure/block_tree.cpp
-INPUT /home/lawfung/LYB/codebook/data_structure/block_tree.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/DancingLinkX.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/DancingLinkX.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/DancingLinkX.cpp
@@ -219,6 +216,9 @@ INPUT /home/lawfung/LYB/codebook/tree/dynamicMST.cpp
 INPUT /home/lawfung/LYB/codebook/tree/Heavy_Light_Decomposition.cpp
 INPUT /home/lawfung/LYB/codebook/tree/Heavy_Light_Decomposition.cpp
 INPUT /home/lawfung/LYB/codebook/tree/Heavy_Light_Decomposition.cpp
+INPUT /home/lawfung/LYB/codebook/tree/sqrt_tree.cpp
+INPUT /home/lawfung/LYB/codebook/tree/sqrt_tree.cpp
+INPUT /home/lawfung/LYB/codebook/tree/sqrt_tree.cpp
 INPUT /home/lawfung/LYB/codebook/graph/Biconnected_component.cpp
 INPUT /home/lawfung/LYB/codebook/graph/Biconnected_component.cpp
 INPUT /home/lawfung/LYB/codebook/graph/Biconnected_component.cpp
@@ -300,6 +300,9 @@ INPUT /home/lawfung/LYB/codebook/convolution/FWT.cpp
 INPUT /home/lawfung/LYB/codebook/convolution/subset_convolution.cpp
 INPUT /home/lawfung/LYB/codebook/convolution/subset_convolution.cpp
 INPUT /home/lawfung/LYB/codebook/convolution/subset_convolution.cpp
+INPUT /home/lawfung/LYB/codebook/convolution/ternary_xor.cpp
+INPUT /home/lawfung/LYB/codebook/convolution/ternary_xor.cpp
+INPUT /home/lawfung/LYB/codebook/convolution/ternary_xor.cpp
 INPUT /home/lawfung/LYB/codebook/string/kmp.cpp
 INPUT /home/lawfung/LYB/codebook/string/kmp.cpp
 INPUT /home/lawfung/LYB/codebook/string/kmp.cpp
