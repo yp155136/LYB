@@ -35,7 +35,7 @@ struct NTT {
 		}
 		return r;
 	}
-	void bitrev(vector < ll > & v, int n) {
+	void bitrev(vector<ll> & v, int n) {
 		int z = __builtin_ctz(n) - 1;
 		for (int i = 0; i < n; ++i) {
 			int x = 0;
@@ -43,7 +43,7 @@ struct NTT {
 			if (x > i) swap(v[x], v[i]);
 		}
 	}
-	void ntt(vector < ll > & v, int n) {
+	void ntt(vector<ll> & v, int n) {
 		bitrev(v, n);
 		for (int s = 2; s <= n; s <<= 1) {
 			int z = s >> 1;
@@ -56,7 +56,7 @@ struct NTT {
 			}
 		}
 	}
-	void intt(vector < ll > & v, int n) {
+	void intt(vector<ll> & v, int n) {
 		ntt(v, n);
 		reverse(v.begin() + 1, v.end());
 		ll inv = fpow(n, mod - 2);
@@ -64,10 +64,10 @@ struct NTT {
 			(v[i] *= inv) %= mod;
 		}
 	}
-	vector < ll > conv(vector < ll > a, vector < ll > b) {
+	vector<ll> conv(vector<ll> a, vector<ll> b) {
 		int sz = 1;
 		while (sz < a.size() + b.size() - 1) sz <<= 1;
-		vector < ll > c(sz);
+		vector<ll> c(sz);
 		while (a.size() < sz) a.push_back(0);
 		while (b.size() < sz) b.push_back(0);
 		ntt(a, sz), ntt(b, sz);

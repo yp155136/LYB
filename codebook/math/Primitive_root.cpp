@@ -2,7 +2,7 @@
 // M has primitive root when M = 2, 4, p^n, 2p^n
 ll Primitive_root(ll n) {
 	if (n == 2) return 1;
-	vector < ll > sol;
+	vector<ll> sol;
 	ll val = phi[n];
 	for (ll i = 2; i * i <= val; ++i) {
 		if (val % i == 0) {

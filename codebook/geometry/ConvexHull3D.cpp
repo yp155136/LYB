@@ -12,7 +12,7 @@ double area(int a, int b, int c)
 double volume(int a, int b, int c, int d) 
 { return mix(info[b] - info[a], info[c] - info[a], info[d] - info[a]); }
 struct Face{
-	int a, b, c; Face(){}
+	int a, b, c; Face() {}
 	Face(int a, int b, int c): a(a), b(b), c(c) {}
 	int &operator [](int k) 
 	{ if (k == 0) return a; if (k == 1) return b; return c; }
@@ -21,10 +21,10 @@ vector<Face> face;
 void insert(int a, int b, int c)
 { face.push_back(Face(a, b, c)); }
 void add(int v) {
-	vector <Face> tmp; int a, b, c; cnt++;
+	vector<Face> tmp; int a, b, c; cnt++;
 	for (int i = 0; i < SIZE(face); i++) {
 		a = face[i][0]; b = face[i][1]; c = face[i][2];
-		if(Sign(volume(v, a, b, c)) < 0)
+		if (Sign(volume(v, a, b, c)) < 0)
 			mark[a][b] = mark[b][a] = mark[b][c] = mark[c][b] = mark[c][a] = mark[a][c] = cnt;
 		else tmp.push_back(face[i]);
 	} face = tmp;
@@ -34,7 +34,7 @@ void add(int v) {
 		if (mark[b][c] == cnt) insert(c, b, v);
 		if (mark[c][a] == cnt) insert(a, c, v);
 	}}
-int Find(){
+int Find() {
 	for (int i = 2; i < n; i++) {
 		Pt ndir = (info[0] - info[i]) ^ (info[1] - info[i]);
 		if (ndir == Pt()) continue; swap(info[i], info[2]);
@@ -51,7 +51,7 @@ int main() {
 			for (int i = 0; i < SIZE(face); ++i) {
 				Pt p = (info[face[i][0]] - info[face[i][1]]) ^
 					(info[face[i][2]] - info[face[i][1]]);
-				p = p / norm( p ); Ndir.push_back(p);
+				p = p / norm(p); Ndir.push_back(p);
 			} sort(Ndir.begin(), Ndir.end());
 			int ans = unique(Ndir.begin(), Ndir.end()) - Ndir.begin();
 			printf("%d\n", ans);

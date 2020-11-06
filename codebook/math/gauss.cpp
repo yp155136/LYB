@@ -22,6 +22,6 @@ struct GAUSS {
 		REP(i, 0, n) ans[i] = v[i][n + 1] * ppow(v[i][i], GAUSS_MOD - 2) % GAUSS_MOD;
 		return ans;
 	}
-	// gs.v.clear() , gs.v.resize(n , vector<int>(n + 1 , 0));
+	// gs.v.clear(), gs.v.resize(n, vector<int>(n + 1, 0));
 }
 gs;

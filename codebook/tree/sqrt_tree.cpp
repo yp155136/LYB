@@ -7,7 +7,7 @@ const int K = 177;
 
 int w[N], sum[N], mx[N];
 int root[N], sz[N], fa[N], dep[N];
-vector < int > G[N], T[N];
+vector<int> G[N], T[N];
 
 void dfs1(int now, int par, int depth) {
 	fa[now] = par;

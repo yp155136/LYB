@@ -6,19 +6,14 @@ struct MMC {
 	};
 	int n, m, prv[V][V], prve[V][V], vst[V];
 	Edge e[E];
-	vector < int > edgeID, cycle, rho;
+	vector<int> edgeID, cycle, rho;
 	double d[V][V];
 	void init(int _n) {
-		n = _n;
-		m = 0;
+		n = _n, m = 0;
 	}
 	// WARNING: TYPE matters
 	void addEdge(int vi, int ui, double ci) {
-		e[m++] = {
-			vi,
-			ui,
-			ci
-		};
+		e[m++] = {vi, ui, ci};
 	}
 	void bellman_ford() {
 		for (int i = 0; i < n; i++) d[0][i] = 0;

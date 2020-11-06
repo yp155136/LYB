@@ -17,7 +17,7 @@ cen[MAX];
 ll dis[Mlg][MAX];
 
 bool visit[MAX];
-vector < int > v;
+vector<int> v;
 int sz[MAX], mx[MAX];
 void dfs_sz(int id) {
 	visit[id] = 1;

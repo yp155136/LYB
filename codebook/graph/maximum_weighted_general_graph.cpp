@@ -13,8 +13,8 @@ struct WeightGraph {
 	int lab[N * 2];
 	int match[N * 2], slack[N * 2], st[N * 2], pa[N * 2];
 	int flo_from[N * 2][N + 1], S[N * 2], vis[N * 2];
-	vector < int > flo[N * 2];
-	queue < int > q;
+	vector<int> flo[N * 2];
+	queue<int> q;
 	int e_delta(const edge & e) {
 		return lab[e.u] + lab[e.v] - g[e.u][e.v].w * 2;
 	}
@@ -136,7 +136,7 @@ struct WeightGraph {
 	bool matching() {
 		memset(S + 1, -1, sizeof(int) * n_x);
 		memset(slack + 1, 0, sizeof(int) * n_x);
-		q = queue < int > ();
+		q = queue<int> ();
 		for (int x = 1; x <= n_x; ++x)
 			if (st[x] == x && !match[x]) pa[x] = 0, S[x] = 0, q_push(x);
 		if (q.empty()) return false;
@@ -171,7 +171,7 @@ struct WeightGraph {
 					if (S[st[b]] == 0) lab[b] += d * 2;
 					else if (S[st[b]] == 1) lab[b] -= d * 2;
 				}
-			q = queue < int > ();
+			q = queue<int> ();
 			for (int x = 1; x <= n_x; ++x)
 				if (st[x] == x && slack[x] && st[slack[x]] != x && e_delta(g[slack[x]][x]) == 0)
 					if (on_found_edge(g[slack[x]][x])) return true;

@@ -25,9 +25,9 @@ int32_t main() {
 			v.emplace_back(i, j);
 	sort(v.begin(), v.end(), cmp);
 
-	for(auto line : v) {
+	for (auto line : v) {
 		int fr = pos[line.F], ba = pos[line.S], now;
-		if(fr > ba) swap(fr, ba);
+		if (fr > ba) swap(fr, ba);
 		// [TODO] points:
 		// p[idx[    1]] more farther
 		// p[idx[    2]] farther

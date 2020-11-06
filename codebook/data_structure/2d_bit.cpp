@@ -1,8 +1,8 @@
 int n, m, k;
 int bit[4][MAX][MAX];
 void update(int c[MAX][MAX], int a, int b, int val) {
-	for (int i = a + 10 ; i < MAX ; i += i & -i)
-		for (int j = b + 10 ; j < MAX ; j += j & -j)
+	for (int i = a + 10; i < MAX; i += i & -i)
+		for (int j = b + 10; j < MAX; j += j & -j)
 			c[i][j] += val;
 }
 int update(int x, int y, int val) {
@@ -19,8 +19,8 @@ void update(int a, int b, int x, int y, int val) {
 }
 int query(int c[MAX][MAX], int a, int b) {
 	int cnt = 0;
-	for (int i = a + 10 ; i > 0 ; i -= i & -i)
-		for (int j = b + 10 ; j > 0 ; j -= j & -j)
+	for (int i = a + 10; i > 0; i -= i & -i)
+		for (int j = b + 10; j > 0; j -= j & -j)
 			cnt += c[i][j];
 	return cnt;
 }

@@ -113,13 +113,13 @@ struct Bigint {
 		return cp3(b) >= 0;
 	}
 	Bigint operator - () const {
-		Bigint r = ( * this);
+		Bigint r = (* this);
 		r.s = -r.s;
 		return r;
 	}
 	Bigint operator + (const Bigint & b) const {
-		if (s == -1) return -(-( * this) + (-b));
-		if (b.s == -1) return ( * this) - (-b);
+		if (s == -1) return -(-(* this) + (-b));
+		if (b.s == -1) return (* this) - (-b);
 		Bigint r;
 		int nl = max(len(), b.len());
 		r.resize(nl + 1);
@@ -135,9 +135,9 @@ struct Bigint {
 		return r;
 	}
 	Bigint operator - (const Bigint & b) const {
-		if (s == -1) return -(-( * this) - (-b));
-		if (b.s == -1) return ( * this) + (-b);
-		if (( * this) < b) return -(b - ( * this));
+		if (s == -1) return -(-(* this) - (-b));
+		if (b.s == -1) return (* this) + (-b);
+		if ((* this) < b) return -(b - (* this));
 		Bigint r;
 		r.resize(len());
 		for (int i = 0; i < len(); i++) {
@@ -178,7 +178,7 @@ struct Bigint {
 			while (d < u) {
 				int m = (d + u + 1) >> 1;
 				r.v[i] = m;
-				if ((r * b2) > ( * this)) u = m - 1;
+				if ((r * b2) > (* this)) u = m - 1;
 				else d = m;
 			}
 			r.v[i] = d;
@@ -189,6 +189,6 @@ struct Bigint {
 		return r;
 	}
 	Bigint operator % (const Bigint & b) {
-		return ( * this) - ( * this) / b * b;
+		return (* this) - (* this) / b * b;
 	}
 };

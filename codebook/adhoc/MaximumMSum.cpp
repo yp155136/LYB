@@ -3,7 +3,7 @@ int n, m, fr[MAX], ba[MAX];
 int v[MAX], idx = 1;
 set<PII> cc;
 void erase(int id) {
-	if(id == 0) return;
+	if (id == 0) return;
 	int f = fr[id], b = ba[id];
 	ba[fr[id]] = b, fr[ba[id]] = f;
 	cc.erase(mp(abs(v[id]), id));
@@ -13,28 +13,28 @@ int32_t main() {
 	int sum = 0, pos = 0, ans = 0;
 	for (int i = 0; i < n; ++ i) {
 		int tmp; cin >> tmp;
-		if(tmp == 0) continue;
-		if((tmp >= 0 && sum >= 0) || (tmp <= 0 && sum <= 0)) {
+		if (tmp == 0) continue;
+		if ((tmp >= 0 && sum >= 0) || (tmp <= 0 && sum <= 0)) {
 			sum += tmp;
 		}
 		else {
-			if(sum > 0) ans += sum, pos ++;
+			if (sum > 0) ans += sum, pos ++;
 			v[idx ++] = sum, sum = tmp;
 		}
 	}
-	if(sum) v[idx ++] = sum;
-	if(sum > 0) ans += sum, pos ++;
+	if (sum) v[idx ++] = sum;
+	if (sum > 0) ans += sum, pos ++;
 	REP(i, 0, idx) {
 		fr[i + 1] = i;
 		ba[i] = i + 1;
-		if(i) cc.insert(mp(abs(v[i]), i));
+		if (i) cc.insert(mp(abs(v[i]), i));
 	} ba[idx - 1] = 0;
-	while(pos > m) {
+	while (pos > m) {
 		auto tmp = cc.begin();
 		int val = (*tmp).A, id = (*tmp).B;
 		cc.erase(tmp);
-		if(v[id] < 0 && (fr[id] == 0 || ba[id] == 0)) continue;
-		if(v[id] == 0) continue;
+		if (v[id] < 0 && (fr[id] == 0 || ba[id] == 0)) continue;
+		if (v[id] == 0) continue;
 		ans -= val, pos --;
 		v[id] = v[fr[id]] + v[id] + v[ba[id]];
 		cc.insert(mp(abs(v[id]), id));
@@ -62,14 +62,14 @@ int32_t main() {
 		cin >> x[i];
 	for (int i = 1; i <= n; ++ i)
 		x[i] += x[i - 1];
-	if(judge(0) <= k) cout << dp[n].A << endl;
+	if (judge(0) <= k) cout << dp[n].A << endl;
 	else {
 		int l = 0, r = 1000000000000LL;
-		while(r - l > 1) {
+		while (r - l > 1) {
 			int mid = l + ((r - l) >> 1), res = judge(mid);
-			if(res == k) return cout << dp[n].A + dp[n].B * mid << endl, 0;
-			else if(res < k) r = mid;
-			else if(res > k) l = mid;
+			if (res == k) return cout << dp[n].A + dp[n].B * mid << endl, 0;
+			else if (res < k) r = mid;
+			else if (res > k) l = mid;
 		}
 		judge(l);
 		cout << dp[n].A + k * l << endl;

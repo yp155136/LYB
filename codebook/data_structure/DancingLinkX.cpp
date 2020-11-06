@@ -19,7 +19,7 @@ struct DLX{
 	}
 	void AddRow(int rr, vector<int> sol) {
 		int tmp = sz;
-		for(auto to : sol) {
+		for (auto to : sol) {
 			l[sz] = sz - 1;
 			r[sz] = sz + 1;
 			d[sz] = to;
@@ -30,18 +30,18 @@ struct DLX{
 		}
 		r[sz - 1] = tmp, l[tmp] = sz - 1;
 	}
-#define FOR(i, way, to) for(int i = way[to] ; i != to ; i = way[i])
+#define FOR (i, way, to) for (int i = way[to]; i != to; i = way[i])
 	void remove(int c) {
 		l[r[c]] = l[c];
 		r[l[c]] = r[c];
-		FOR(i, d, c) FOR(j, r, i) {
+		FOR (i, d, c) FOR (j, r, i) {
 			u[d[j]] = u[j];
 			d[u[j]] = d[j];
 			--s[col[j]];
 		}
 	}
 	int restore(int c) {
-		FOR(i, u, c) FOR(j, l, i) {
+		FOR (i, u, c) FOR (j, l, i) {
 			++s[col[j]];
 			u[d[j]] = j;
 			d[u[j]] = j;
@@ -50,18 +50,18 @@ struct DLX{
 		r[l[c]] = c;
 	}
 	void DFS(int floor) {
-		if(r[0] == 0) {
+		if (r[0] == 0) {
 			ans = min(ans, floor);
 			return;
 		}
-		if(floor >= ans) return;
+		if (floor >= ans) return;
 		int c = r[0];
-		FOR(i, r, 0) if(s[i] < s[c]) c = i;
+		FOR (i, r, 0) if (s[i] < s[c]) c = i;
 		remove(c);
-		FOR(i, d, c) {
-			FOR(j, r, i) remove(col[j]);
+		FOR (i, d, c) {
+			FOR (j, r, i) remove(col[j]);
 			DFS(floor + 1);
-			FOR(j, l, i) restore(col[j]);
+			FOR (j, l, i) restore(col[j]);
 		}
 		restore(c);
 	}
@@ -69,7 +69,7 @@ struct DLX{
 int n, m;
 int32_t main() {
 	IOS;
-	while(cin >> n >> m) {
+	while (cin >> n >> m) {
 		solver.init(m);
 		for (int i = 0; i < n; ++ i) {
 			int nn, in;
@@ -80,7 +80,7 @@ int32_t main() {
 			solver.AddRow(i, sol);
 		}
 		solver.DFS(0);
-		if(solver.ans == INF) cout << "No" << endl;
+		if (solver.ans == INF) cout << "No" << endl;
 		else cout << solver.ans << endl;
 	}
 	return 0;

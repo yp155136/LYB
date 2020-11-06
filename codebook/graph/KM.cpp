@@ -7,10 +7,10 @@ int s[maxn], t[maxn], good[maxn];
 int match(int now) {
 	s[now] = 1;
 	for (int to = 1; to <= n; to ++) {
-		if(t[to]) continue;
-		if(lx[now] + ly[to] == w[now][to]) {
+		if (t[to]) continue;
+		if (lx[now] + ly[to] == w[now][to]) {
 			t[to] = 1;
-			if(good[to] == 0 || match(good[to]))
+			if (good[to] == 0 || match(good[to]))
 				return good[to] = now, 1;
 		}
 		else slk[to] = min(slk[to], lx[now] + ly[to] - w[now][to]);
@@ -20,10 +20,10 @@ int match(int now) {
 void update() {
 	int val = INF;
 	for (int i = 1; i <= n; i ++) 
-		if(t[i] == 0) val = min(val, slk[i]);
+		if (t[i] == 0) val = min(val, slk[i]);
 	for (int i = 1; i <= n; i ++) {
-		if(s[i]) lx[i] -= val;
-		if(t[i]) ly[i] += val;
+		if (s[i]) lx[i] -= val;
+		if (t[i]) ly[i] += val;
 	}
 }
 void run_km() {
@@ -36,10 +36,10 @@ void run_km() {
 		ly[i] = 0, good[i] = 0;
 	for (int i = 1; i <= n; i ++) {
 		for (int j = 1; j <= n; j ++) slk[j] = INF;
-		while(1) {
+		while (1) {
 			for (int j = 1; j <= n; j ++)
 				s[j] = t[j] = 0;
-			if(match(i)) break;
+			if (match(i)) break;
 			else update();
 		}
 	}

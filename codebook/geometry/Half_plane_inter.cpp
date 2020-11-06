@@ -23,9 +23,9 @@ bool isin(Line l0, Line l1, Line l2) {
  * in all the lines. (use (l.S - l.F) ^ (p - l.F) > 0
  */
 /* --^-- Line.FI --^-- Line.SE --^-- */
-vector<Line> halfPlaneInter(vector < Line > lines) {
+vector<Line> halfPlaneInter(vector<Line> lines) {
 	int sz = lines.size();
-	vector < double > ata(sz), ord(sz);
+	vector<double> ata(sz), ord(sz);
 	for (int i = 0; i < sz; i++) {
 		ord[i] = i;
 		Pt d = lines[i].SE - lines[i].FI;
@@ -37,11 +37,11 @@ vector<Line> halfPlaneInter(vector < Line > lines) {
 				(lines[j].SE - lines[i].FI)) < 0;
 		return ata[i] < ata[j];
 	});
-	vector < Line > fin;
+	vector<Line> fin;
 	for (int i = 0; i < sz; i++)
 		if (!i or fabs(ata[ord[i]] - ata[ord[i - 1]]) > eps)
 			fin.PB(lines[ord[i]]);
-	deque < Line > dq;
+	deque<Line> dq;
 	for (int i = 0; i < (int)(fin.size()); i++) {
 		while ((int)(dq.size()) >= 2 and not isin(fin[i], dq[(int)(dq.size()) - 2],
 				dq[(int)(dq.size()) - 1]))
@@ -55,6 +55,6 @@ vector<Line> halfPlaneInter(vector < Line > lines) {
 		dq.pop_back();
 	while ((int)(dq.size()) >= 3 and not isin(dq[(int)(dq.size()) - 1], dq[0], dq[1]))
 		dq.pop_front();
-	vector < Line > res(dq.begin(), dq.end());
+	vector<Line> res(dq.begin(), dq.end());
 	return res;
 }

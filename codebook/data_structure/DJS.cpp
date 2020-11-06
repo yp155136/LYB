@@ -6,7 +6,7 @@ struct DJS{
 		stk.push_back(memo.size());
 	}
 	void undo() {
-		while(memo.size() > stk.back()) {
+		while (memo.size() > stk.back()) {
 			*memo.back().first = memo.back().second;
 			memo.pop_back();
 		}

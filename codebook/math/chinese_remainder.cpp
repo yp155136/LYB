@@ -4,7 +4,7 @@ void extgcd(ll a, ll b, ll & d, ll & x, ll & y) {
 	else extgcd(b, a % b, d, y, x), y -= (a / b) * x;
 }
 ll n;
-vector < ll > v, m;
+vector<ll> v, m;
 int main() {
 	while (cin >> n) {
 		v.clear(), m.clear();

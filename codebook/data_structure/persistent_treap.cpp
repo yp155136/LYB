@@ -22,10 +22,10 @@ Treap * merge(Treap * a, Treap * b) {
 	if (!a || !b) return a ? a : b;
 	Treap * ret;
 	if (myRnd() % (Sz(a) + Sz(b)) < Sz(a)) {
-		ret = new(ptr++) Treap( * a);
+		ret = new(ptr++) Treap(* a);
 		ret -> rc = merge(a -> rc, b);
 	} else {
-		ret = new(ptr++) Treap( * b);
+		ret = new(ptr++) Treap(* b);
 		ret -> lc = merge(a, b -> lc);
 	}
 	pull(ret);
@@ -34,11 +34,11 @@ Treap * merge(Treap * a, Treap * b) {
 void split(Treap * t, int k, Treap * & a, Treap * & b) {
 	if (!t) a = b = NULL;
 	else if (Sz(t -> lc) + 1 <= k) {
-		a = new(ptr++) Treap( * t);
+		a = new(ptr++) Treap(* t);
 		split(t -> rc, k - Sz(t -> lc) - 1, a -> rc, b);
 		pull(a);
 	} else {
-		b = new(ptr++) Treap( * t);
+		b = new(ptr++) Treap(* t);
 		split(t -> lc, k, a, b -> lc);
 		pull(b);
 	}

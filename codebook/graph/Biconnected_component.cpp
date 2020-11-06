@@ -10,7 +10,7 @@ void dfs(int now,int par) {
 	vis[now] = true;
 	dfn[now] = low[now] = (++stamp);
 	for (int i : G[now]) {
-		int to = ( e[i] ^ now );
+		int to = (e[i] ^ now);
 		if (to == par) continue;
 		if (!vis[to]) {
 			sta.push(i); dfs(to,now);

@@ -2,7 +2,7 @@ int siz[MAX], son[MAX], dep[MAX], ffa[MAX];
 int top[MAX], idx[MAX], idpo = 0;
 int n, m;
 int e[MAX][3];
-vector < int > v[MAX];
+vector<int> v[MAX];
 struct node {
 	int big, sml;
 }

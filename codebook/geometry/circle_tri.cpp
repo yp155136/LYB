@@ -15,8 +15,8 @@ struct Circle_and_Segment_Intersection {
 			ts.push_back(-b / 2 / a);
 		}
 		else {
-			ts.push_back( (-b + sqrt(bb4ac)) / (a * 2) );
-			ts.push_back( (-b - sqrt(bb4ac)) / (a * 2) );
+			ts.push_back((-b + sqrt(bb4ac)) / (a * 2));
+			ts.push_back((-b - sqrt(bb4ac)) / (a * 2));
 		}
 		sort(ts.begin(), ts.end());
 		for (ld t: ts) {
@@ -49,10 +49,10 @@ ld solve_small(pdd cen, ld r, pdd p1, pdd p2) {
 			ret = (p1 ^ p2) / 2;
 		}
 		else {
-			ret = (r * r * f(atan2(p1.Y, p1.X), atan2(p2.Y, p2.X))) / 2 ;
+			ret = (r * r * f(atan2(p1.Y, p1.X), atan2(p2.Y, p2.X))) / 2;
 		}
 	}
-	else if ( (int)inter.size() == 1) {
+	else if ((int)inter.size() == 1) {
 		if (!in_cir(cen, r, p1) && !in_cir(cen, r, p2)) {
 			//outside cut
 			ret = (r * r * f(atan2(p1.Y, p1.X), atan2(p2.Y, p2.X))) / 2;
@@ -68,7 +68,7 @@ ld solve_small(pdd cen, ld r, pdd p1, pdd p2) {
 			ret +=  (r * r * f(atan2(_p2.Y, _p2.X), atan2(p2.Y, p2.X))) / 2;
 		}
 	}
-	else if ( (int)inter.size() == 2) {
+	else if ((int)inter.size() == 2) {
 		pdd _p2 = inter[0], _p1 = inter[1];
 		ret +=  ((_p1 ^ _p2) / 2);
 		ret +=  (r * r * f(atan2(_p2.Y, _p2.X), atan2(p2.Y, p2.X))) / 2;

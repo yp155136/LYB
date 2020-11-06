@@ -25,7 +25,7 @@ struct SteinerTree {
 					dst[i][j] = min(dst[i][j],
 						dst[i][k] + dst[k][j]);
 	}
-	int solve(const vector < int > & ter) {
+	int solve(const vector<int> & ter) {
 		int t = (int) ter.size();
 		for (int i = 0; i < (1 << t); i++)
 			for (int j = 0; j < n; j++)

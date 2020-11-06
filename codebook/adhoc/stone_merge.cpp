@@ -7,9 +7,9 @@ int DFS(int now) {
 	v.erase(v.begin() + now);
 	int id = 0;
 	for (int i = now - 1; i >= 0; -- i)
-		if(v[i] >= val) { id = i + 1; break; }
+		if (v[i] >= val) { id = i + 1; break; }
 	v.insert(v.begin() + id, val);
-	while(id >= 2 && v[id - 2] <= v[id]) {
+	while (id >= 2 && v[id - 2] <= v[id]) {
 		int dis = v.size() - id;
 		DFS(id - 2);
 		id = v.size() - dis;
@@ -21,10 +21,10 @@ int32_t main() {
 	for (int i = 0; i < n; ++ i) cin >> x[i];
 	for (int i = 0; i < n; ++ i) {
 		v.emplace_back(x[i]);
-		while(v.size() >= 3 && v[v.size() - 3] <= v[v.size() - 1]) 
+		while (v.size() >= 3 && v[v.size() - 3] <= v[v.size() - 1]) 
 			DFS(v.size() - 3);
 	}
-	while(v.size() > 1) DFS(v.size() - 2);
+	while (v.size() > 1) DFS(v.size() - 2);
 	cout << ans << endl;
 	return 0;
 }
