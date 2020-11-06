@@ -30,18 +30,18 @@ struct DLX{
 		}
 		r[sz - 1] = tmp, l[tmp] = sz - 1;
 	}
-#define FOR (i, way, to) for (int i = way[to]; i != to; i = way[i])
+#define FOR(i, way, to) for (int i = way[to]; i != to; i = way[i])
 	void remove(int c) {
 		l[r[c]] = l[c];
 		r[l[c]] = r[c];
-		FOR (i, d, c) FOR (j, r, i) {
+		FOR(i, d, c) FOR(j, r, i) {
 			u[d[j]] = u[j];
 			d[u[j]] = d[j];
 			--s[col[j]];
 		}
 	}
 	int restore(int c) {
-		FOR (i, u, c) FOR (j, l, i) {
+		FOR(i, u, c) FOR(j, l, i) {
 			++s[col[j]];
 			u[d[j]] = j;
 			d[u[j]] = j;
@@ -56,12 +56,12 @@ struct DLX{
 		}
 		if (floor >= ans) return;
 		int c = r[0];
-		FOR (i, r, 0) if (s[i] < s[c]) c = i;
+		FOR(i, r, 0) if (s[i] < s[c]) c = i;
 		remove(c);
-		FOR (i, d, c) {
-			FOR (j, r, i) remove(col[j]);
+		FOR(i, d, c) {
+			FOR(j, r, i) remove(col[j]);
 			DFS(floor + 1);
-			FOR (j, l, i) restore(col[j]);
+			FOR(j, l, i) restore(col[j]);
 		}
 		restore(c);
 	}

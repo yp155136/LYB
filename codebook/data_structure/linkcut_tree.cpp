@@ -2,7 +2,9 @@ struct SplayNode {
 	static SplayNode HOLE;
 	SplayNode *ch[2], *par;
 	bool rev;
-	SplayNode(): par(&HOLE), rev(false) { ch[0] = ch[1] = &HOLE; }
+	SplayNode(): par(&HOLE), rev(false) {
+		ch[0] = ch[1] = &HOLE;
+	}
 	bool isRoot() {
 		return (par->ch[0] != this && par->ch[1] != this);
 	}
@@ -38,7 +40,8 @@ struct SplayNode {
 		while (!isRoot()) {
 			if (!par->isRoot()) {
 				SplayNode *gp = par->par;
-				if ((gp->ch[0] == par) == (par->ch[0] == this)) rotate();
+				if ((gp->ch[0] == par) == (par->ch[0] == this))
+					rotate();
 				else par->rotate();
 			}
 			rotate();
@@ -93,7 +96,8 @@ namespace LCT {
 		access(x);
 		auto lca = access(y);
 		x->splay();
-		return lca->data + lca->ch[1]->sum + (x == lca ? 0 : x->sum);
+		return lca->data + lca->ch[1]->sum + 
+									(x == lca ? 0 : x->sum);
 	}
 	void modify(SplayNode *x, int data) {
 		x->splay();
