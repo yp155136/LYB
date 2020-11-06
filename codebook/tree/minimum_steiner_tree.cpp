@@ -40,7 +40,8 @@ struct SteinerTree {
 				continue;
 			}
 			for (int i = 0; i < n; i++)
-				for (int submsk = (msk - 1) & msk; submsk; submsk = (submsk - 1) & msk)
+				for (int submsk = (msk - 1) & msk; submsk; 
+					submsk = (submsk - 1) & msk)
 					dp[msk][i] = min(dp[msk][i],
 						dp[submsk][i] +
 						dp[msk ^ submsk][i]);

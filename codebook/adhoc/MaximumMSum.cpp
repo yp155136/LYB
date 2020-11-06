@@ -49,8 +49,10 @@ PII dp[MAX], rd[MAX]; // max value, times, can be buy, times
 int judge(int now) {
 	dp[1] = mp(0, 0), rd[1] = mp(-x[1], 0);
 	REP(i, 2, n + 1) {
-		dp[i] = max(dp[i - 1], mp(rd[i - 1].A + x[i] - now, rd[i - 1].B + 1));
-		rd[i] = max(rd[i - 1], mp(dp[i - 1].A - x[i]	  , dp[i - 1].B));
+		dp[i] = max(dp[i - 1], 
+			mp(rd[i - 1].A + x[i] - now, rd[i - 1].B + 1));
+		rd[i] = max(rd[i - 1], 
+			mp(dp[i - 1].A - x[i]	  , dp[i - 1].B));
 	}
 	return dp[n].B;
 }
@@ -67,7 +69,8 @@ int32_t main() {
 		int l = 0, r = 1000000000000LL;
 		while (r - l > 1) {
 			int mid = l + ((r - l) >> 1), res = judge(mid);
-			if (res == k) return cout << dp[n].A + dp[n].B * mid << endl, 0;
+			if (res == k) 
+				return cout << dp[n].A + dp[n].B * mid << endl, 0;
 			else if (res < k) r = mid;
 			else if (res > k) l = mid;
 		}
