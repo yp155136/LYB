@@ -189,9 +189,9 @@ INPUT /home/lawfung/LYB/codebook/data_structure/block_tree.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/DancingLinkX.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/DancingLinkX.cpp
 INPUT /home/lawfung/LYB/codebook/data_structure/DancingLinkX.cpp
-INPUT /home/lawfung/LYB/codebook/adhoc/2d_bit.cpp
-INPUT /home/lawfung/LYB/codebook/adhoc/2d_bit.cpp
-INPUT /home/lawfung/LYB/codebook/adhoc/2d_bit.cpp
+INPUT /home/lawfung/LYB/codebook/data_structure/2d_bit.cpp
+INPUT /home/lawfung/LYB/codebook/data_structure/2d_bit.cpp
+INPUT /home/lawfung/LYB/codebook/data_structure/2d_bit.cpp
 INPUT /home/lawfung/LYB/codebook/flow/ISAP_bounded.cpp
 INPUT /home/lawfung/LYB/codebook/flow/ISAP_bounded.cpp
 INPUT /home/lawfung/LYB/codebook/flow/ISAP_bounded.cpp
@@ -351,9 +351,9 @@ INPUT /home/lawfung/LYB/codebook/geometry/rotating_calipers.cpp
 INPUT /home/lawfung/LYB/codebook/adhoc/joseph_mlogn.cpp
 INPUT /home/lawfung/LYB/codebook/adhoc/joseph_mlogn.cpp
 INPUT /home/lawfung/LYB/codebook/adhoc/joseph_mlogn.cpp
-INPUT /home/lawfung/LYB/codebook/data_structure/segment_max_segment_sum.cpp
-INPUT /home/lawfung/LYB/codebook/data_structure/segment_max_segment_sum.cpp
-INPUT /home/lawfung/LYB/codebook/data_structure/segment_max_segment_sum.cpp
+INPUT /home/lawfung/LYB/codebook/adhoc/segment_max_segment_sum.cpp
+INPUT /home/lawfung/LYB/codebook/adhoc/segment_max_segment_sum.cpp
+INPUT /home/lawfung/LYB/codebook/adhoc/segment_max_segment_sum.cpp
 INPUT /home/lawfung/LYB/codebook/adhoc/stone_merge.cpp
 INPUT /home/lawfung/LYB/codebook/adhoc/stone_merge.cpp
 INPUT /home/lawfung/LYB/codebook/adhoc/stone_merge.cpp
