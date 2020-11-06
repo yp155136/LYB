@@ -1,6 +1,6 @@
-#define MAX 100000
-#define INF 0x3f3f3f3f
-#define mod 10000
+const int MAX = 1e5;
+const int INF = 0x3f3f3f3f;
+const int mod = 1e4;
 int n, k, x[MAX], c[MAX];
 vector < int > mul(vector < int > a, vector < int > b) {
 	vector < int > ans(n + n + 1);

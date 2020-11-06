@@ -1,4 +1,4 @@
-#define edge pair<int, PII>
+typedef pair<int, PII> edge;
 int n, sol[maxn];
 PII x[maxn];
 vector<edge> v;

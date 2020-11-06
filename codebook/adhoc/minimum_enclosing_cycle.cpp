@@ -1,4 +1,4 @@
-#define pdd pair<double, double>
+typedef pair<double, double> pdd;
 #define F first
 #define S second
 

@@ -1,5 +1,5 @@
-#define MAX 1050
-#define INF 0x3f3f3f3f
+const int MAX = 1050;
+const int INF = 0x3f3f3f3f;
 struct DLX{
 	int n, sz, s[MAX];
 	int row[MAX * 100], col[MAX * 100];

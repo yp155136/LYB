@@ -1,9 +1,9 @@
 // Minimum Steiner Tree
 // O(V 3^T + V^2 2^T)
 struct SteinerTree {
-    const int V = 33;
-    const int T = 8;
-    const int INF = 0x3f3f3f3f;
+	const int V = 33;
+	const int T = 8;
+	const int INF = 0x3f3f3f3f;
 
 	int n, dst[V][V], dp[1 << T][V], tdst[V];
 	void init(int _n) {
