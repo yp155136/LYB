@@ -1,0 +1,5 @@
+syntax on
+se ru nu ai
+se ts=4 sts=4 sw=4 st=4 smarttab laststatus=2 expandtab
+inoremap {<ENTER> {}<LEFT><ENTER>;<LEFT><DEL><ENTER><UP><TAB>
+"se mouse=a expandtab
