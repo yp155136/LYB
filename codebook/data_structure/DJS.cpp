@@ -14,7 +14,7 @@ struct DJS{
 	}
 	void assign(int *x, int v){
 		memo.push_back({x, *x});
-		*x=v;
+		*x = v;
 	}
 	//assign(&a, b); //a = b
 } djs;

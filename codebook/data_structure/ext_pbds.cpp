@@ -6,7 +6,7 @@ using namespace __gnu_pbds;
 using namespace __gnu_cxx;
 using namespace std;
  
-__gnu_pbds::priority_queue<int> pq;
+__gnu_pbds::priority_queue<int> pq, pq2;
 __gnu_pbds::priority_queue<int>::point_iterator idx[10];
 __gnu_pbds::priority_queue<int, less<int>, pairing_heap_tag> heap;
 /*
@@ -15,7 +15,7 @@ rc_binomial_heap_tag, binary_heap_tag
 */
 idx[0] = pq.push(1);
 pq.modify(idx[0], 2); // change the iterator's value to 2
-pq1.join(pq2);
+pq.join(pq2);
 
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> TREE;
 TREE name;
