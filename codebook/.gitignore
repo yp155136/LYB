@@ -1,0 +1,8 @@
+*.log
+*.aux
+*.toc
+*.fls
+*.xdv
+*.png
+*.fdb*
+*.synctex*
