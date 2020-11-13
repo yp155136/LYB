@@ -4,7 +4,7 @@ struct Pt{
 	Pt cross(const Pt &p) const 
 	{ return Pt(y * p.z - z * p.y, z * p.x - x * p.z, x * p.y - y * p.x); }
 } info[N];
-int mark[N][N],n, cnt;;
+int mark[N][N], n, cnt;
 double mix(const Pt &a, const Pt &b, const Pt &c) 
 { return a * (b ^ c); }
 double area(int a, int b, int c) 
