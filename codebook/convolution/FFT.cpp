@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 const int MAXN = 2 * 262144;
 typedef long double ld;
 typedef complex<ld> cplx;

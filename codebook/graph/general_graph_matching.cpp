@@ -1,5 +1,4 @@
-const int N = 100006,
-	E = (2e5) * 2;
+const int N = 100006, E = (2e5) * 2;
 struct Graph {
 	//1-index
 	int to[E], bro[E], head[N], e;

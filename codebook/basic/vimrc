@@ -1,6 +1,5 @@
 syn on
 se ru nu ai sta et
 se ts=4 sts=4 sw=4 st=4 ls=2
-ino {<CR> {<CR><CR>}<UP><TAB>
-"ino {<CR> {<CR>;<BS><CR>}<UP><TAB>
+ino {<CR> {<CR>;<BS><CR>}<UP><TAB>
 "se mouse=a et

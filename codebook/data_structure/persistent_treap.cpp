@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 struct Treap {
 	static Treap mem[P];
 	Treap * lc, * rc;

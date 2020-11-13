@@ -13,11 +13,7 @@ edge whose cap > 0.
 */
 
 //Be careful that it's zero base !!!!!!!!
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-#define SZ(x) ((int)(x).size())
-#define eb emplace_back
+// SZ, eb, ll
 const ll INF = 0x3f3f3f3f3f3f3f3f;
 
 const ll N = 5e2 + 5;

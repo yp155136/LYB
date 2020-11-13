@@ -23,11 +23,8 @@ struct ZL {
 		len = m;
 		for (;;) {
 			for (int i = 1; i <= n; i++) {
-				pre[i] = 0;
+				pre[i] = id[i] = vis[i] = h[i] = 0;
 				In[i] = inf;
-				id[i] = 0;
-				vis[i] = 0;
-				h[i] = 0;
 			}
 			for (int i = 1; i <= m; i++)
 				if (b[i].u != b[i].v && b[i].w < In[b[i].v]) {

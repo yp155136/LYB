@@ -1,8 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-const int N = 30006;
+const int N = 3e4 + 6;
 const int K = 177;
 
 int w[N], sum[N], mx[N];

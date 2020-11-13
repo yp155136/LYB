@@ -67,8 +67,7 @@ struct DLX{
 	}
 } solver;
 int n, m;
-int32_t main() {
-	IOS;
+int main() {
 	while (cin >> n >> m) {
 		solver.init(m);
 		for (int i = 0; i < n; ++ i) {
@@ -83,5 +82,4 @@ int32_t main() {
 		if (solver.ans == INF) cout << "No" << endl;
 		else cout << solver.ans << endl;
 	}
-	return 0;
 }
