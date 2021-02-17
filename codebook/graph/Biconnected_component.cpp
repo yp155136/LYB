@@ -1,19 +1,19 @@
 int low[N], dfn[N];
 bool vis[N];
-int cnt[N], e[N], x[N], y[N]; // e[i] = x[i] ^ y[i]
+int e[M], x[M], y[M]; // e[i] = x[i] ^ y[i]
 int stamp, bcc_no = 0;
 
 vector<int> G[N], bcc[N];
 stack<int> sta;
 
-void dfs(int now,int par) {
+void dfs(int now, int par_eid) {
 	vis[now] = true;
 	dfn[now] = low[now] = (++stamp);
 	for (int i : G[now]) {
+		if (i == par_eid) continue;
 		int to = (e[i] ^ now);
-		if (to == par) continue;
 		if (!vis[to]) {
-			sta.push(i); dfs(to,now);
+			sta.push(i); dfs(to, i);
 			low[now] = min(low[now], low[to]);
 			if (low[to] >= dfn[now]) {
 				++bcc_no; int p; // p is edge index
