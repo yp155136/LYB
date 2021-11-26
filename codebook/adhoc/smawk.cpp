@@ -33,7 +33,7 @@ void reduce(vector<int> &r, vector<int> &c) {
     bool pushed = true;
     while (!new_c.empty()) {
       int i = (int)new_c.size() - 1;
-      if (f(r[i], c[new_c.back()]) >= f(r[i], c[j])) {
+      if (f(r[i], c[new_c.back()]) > f(r[i], c[j])) {
         new_c.pop_back();
         continue;
       }
